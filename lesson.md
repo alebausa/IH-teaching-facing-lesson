@@ -299,3 +299,110 @@ for (let key in student) {
 ### Lesson 4: Arrays & Objects combined key concepts
 
 > :clock10: 15 min
+
+- There are nested objects and we can chain notation to access data
+- There are multidimensional arrays: how to access array sublevels
+- If we combine the two, we have data structures, and therefore, we have to combine notations to access the data
+
+<details>
+  <summary> Click for code examples</summary>
+
+```javascript
+const school = {
+  address: {
+    street: 'Fake St',
+    number: 34,
+  },
+  contact: {
+    phone: 934561278,
+    email: 'school@edu.com',
+  },
+}
+
+// Access the email property
+school.contact.email
+```
+
+```javascript
+const groups = [
+  ['Harry', 'Ron', 'Hermione'],
+  ['Draco', 'Crab', 'Goyle'],
+  ['Luna', 'Ginny', 'Neville'],
+]
+
+// Access the 'Crab' string:
+groups[1][1]
+```
+
+```javascript
+const classRoom = {
+  teacher: {
+    firstName: 'Marcelino',
+    lastName: 'Padberg',
+    age: 25,
+    specialty: 'WEB DEV',
+  },
+  students: [
+    { firstName: 'Aliyah', lastName: 'Schulist', age: 18 },
+    { firstName: 'Cleveland', lastName: 'Towne', age: 28 },
+    { firstName: 'Jan', lastName: 'Quitzon', age: 18 },
+    { firstName: 'Alaina', lastName: 'Runolfsdottir', age: 18 },
+    { firstName: 'Gerhard', lastName: 'Bergstrom', age: 23 },
+  ],
+}
+
+// Access the last name of the student Jan
+classRoom.students[2].lastName
+
+// To modify an element we can simply reassign it:
+classRoom.teacher.specialty = classRoom.teacher.specialty.toLowerCase()
+console.log(classRoom)
+```
+
+</details>
+
+---
+
+#### :pencil2: Time to practise
+
+> :clock10: 20 min (+ 10 min Review)
+
+<details>
+  <summary> Click for instructions </summary>
+
+- Fork the following replit [Object and array practise](https://replit.com/@AlejandraBausa/ObjectPractice#script.js).
+</details>
+<details>
+  <summary> Click for solutions (code along together) </summary>
+
+```javascript
+// Solutions
+
+// 1.1.
+restaurants[2].address.street
+
+// 1.2.
+restaurants[0].cuisine[0]
+
+// 1.3.
+restaurants[1].cuisine.forEach((elem) => console.log(elem))
+
+// 1.4.
+restaurants[0].isAccessible = false
+restaurants[1].isAccessible = false
+
+// 1.5.
+console.log('isAccessible' in restaurants[1])
+
+// 1.6.
+Object.keys(restaurants[2])
+
+// 1.7.
+function getRandomRestaurant() {
+  const randomRestaurant =
+    restaurants[Math.floor(Math.random() * restaurants.length)]
+  return randomRestaurant
+}
+```
+
+</details>
