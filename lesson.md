@@ -2,7 +2,7 @@
 
 ### Lesson Duration: 3 hours
 
-> Purpose: The purpose of this lesson is to go into detail of arrays and objects, understand the basic concepts of array and object manipulation and data access and introduce some of JavaScript most common array and object methods.
+> Purpose: The purpose of this lesson is to go into detail of arrays and objects, understand the basic concepts of array and object manipulation and data access and introduce some of JavaScript's most common array and object methods.
 
 ---
 
