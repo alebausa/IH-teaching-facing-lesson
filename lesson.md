@@ -47,7 +47,7 @@ console.log(fruits.length)
 
 ---
 
-### Lesson 1: Data manipulation in arrays
+### Lesson 1: Data manipulation in arrays key concepts
 
 > :clock10: 20 min
 
@@ -116,7 +116,7 @@ favFoods.splice(index, 1)
 
 ---
 
-### Lesson 2: Array iteration
+### Lesson 2: Array iteration key concepts
 
 > :clock10: 20 min
 
@@ -226,3 +226,76 @@ letters.includes('c')
 :coffee: **BREAK**
 
 ---
+
+### Lesson 3: Object manipulation key concepts
+
+> :clock10: 15 min
+
+- Objects are commonly used when there are several properties that belong to the same concept or unit of data
+- There are different ways of declaring objects
+- We can access their properties via bracket notation or dot notation
+- There are different ways of knowing what keys does an object have
+- There ways to reassign keys and values in an object an manipulate it
+- Iterate with the <code>for in</code> method
+
+<details>
+  <summary> Click for code examples</summary>
+
+```javascript
+const student = {}
+const student = new Object()
+const student = {
+  // Key: value
+  name: 'Olivia',
+  age: 32,
+  level: 'intermediate',
+  scholarship: true,
+}
+```
+
+```javascript
+// Bracket notation
+console.log(student['age'])
+// Dot notation
+console.log(student.age);
+}
+```
+
+```javascript
+console.log(Object.keys(student)); // Returns a key array
+}
+```
+
+```javascript
+// Add properties or reassign them
+
+// Via dot notation
+student.phone = 637129070;
+// Via bracket notation
+student['lastName'] = 'Dunham';
+}
+```
+
+```javascript
+// Add properties or reassign them
+
+// Via dot notation
+student.phone = 637129070;
+// Via bracket notation
+student['lastName'] = 'Dunham';
+}
+```
+
+```javascript
+for (let key in student) {
+  console.log(key)
+}
+```
+
+</details>
+
+---
+
+### Lesson 4: Arrays & Objects combined key concepts
+
+> :clock10: 15 min
