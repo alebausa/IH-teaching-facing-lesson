@@ -112,274 +112,111 @@ favFoods.splice(index, 1)
 
 ---
 
-#### :pencil2: Time to practice!
+:coffee: **BREAK**
+
+---
+
+### Lesson 2: Array iteration
+
+> :clock10: 20 min
+
+Iterate through an array with <code>for</code> and <code>forEach</code>
+
+- for loop (already performed)
+- forEach: it takes a callback function and the return value is undefined
+
+<details>
+  <summary> Code example: for loop </summary>
+
+```javascript
+const arrayNames = ['Pedro', 'Jake', 'Joan']
+for (let i = 0; i < arrayNames.length; i++) {
+  console.log(arrayNames[i])
+}
+```
+
+</details>
+
+<details>
+  <summary> Code example: forEach </summary>
+
+```javascript
+const arrayNames = ['Pedro', 'Jake', 'Joan']
+
+// It takes a callback function
+arrayNames.forEach(function (name) {
+  console.log(name)
+})
+
+// I can also write the callback function as an arrow function (ES6)
+arrayNames.forEach((name) => console.log(`Hello ${name}!`))
+
+// I can manipulate arrays from within
+const copyOfNames = []
+arrayNames.forEach((name) => copyOfNames.push(name))
+console.log(copyOfNames)
+
+// I can perform more complex operations combining the forEach method with other elements (methods or properties)
+const students = [
+  'Kwabena',
+  'Guillem',
+  'Daniel',
+  'Josep',
+  'Elisa',
+  'Elo',
+  'Carlos',
+]
+const dropOuts = ['Guillem', 'Josep']
+dropOuts.forEach((student) => {
+  const indexOfDropOut = students.indexOf(student)
+  students.splice(indexOfDropOut, 1)
+})
+console.log(students)
+```
+
+</details>
+
+---
+
+#### :pencil2: Time to practise
 
 > :clock10: 20 min (+ 10 min Review)
 
 <details>
-  <summary> Click for Instructions: Activity 1 </summary>
+  <summary> Click for instructions </summary>
 
-- Link to [activity 1](https://github.com/ironhack-edu/data_3.08_activities/blob/master/3.08_activity_1.md).
-
-</details>
-
-<details>
-  <summary> Click for Solution: Activity 1 solutions </summary>
-
-- Link to [activity 1 solution](https://gist.github.com/ironhack-edu/253270833e1716fca5d7273469ea757d).
-
-</details>
-
----
-
-:coffee: **BREAK**
-
----
-
-### Lesson 2 key concepts
-
-> :clock10: 20 min
-
-Revisit Data Analysis work flow for modeling - 1
-
-- Data acquisition (already performed)
-- Exploratory data analysis
-- Data Cleaning/wrangling
-
-<details>
-  <summary> Click for Code Sample </summary>
-
-```python
-data['status'].value_counts()
-
-data.shape
-
-data.dtypes
-
-data.isna().sum()
-data = data[data['duration'].isna() == False]
-
-data.describe()
-
-data['duration'] = data['duration'].astype('object') # This will be treated as categorical
-data.describe()
-data.isna().sum()
-```
+- Fork the following replit [Array practise](https://replit.com/@AlejandraBausa/ArrayPractice#script.js).
 
 </details>
 
 <details>
-  <summary> Click for Code Sample:  Cleaning Categorical Columns</summary>
+  <summary> Click for solutions: we will code along the solutions together </summary>
 
-```python
-data['operation'].value_counts()
-def cleanOperation(x):
-    x = x.lower()
-    if 'vyber' in x:
-        return "vyber"
-    elif 'prevod' in x:
-        return "prevod"
-    elif 'vklad' in x:
-        return 'vklad'
-    else:
-        return 'unknown'
+```javascript
+// SOLUTIONS
 
-data['operation'] = list(map(cleanOperation, data['operation']))
-```
+// 1.1.
+animals.shift()
+// 1.2.
+animals.pop()
+// 1.3.
+animals.splice(2, 1)
+// 1.4.
+animals.unshift('iguana')
 
-```python
-data['k_symbol'].value_counts()
-data['k_symbol'].value_counts().index
-def cleankSymbol(x):
-    if x in ['', ' ']:
-        return 'unknown'
-    else:
-        return x
+// 2.1.
+numbers.forEach((number) => console.log(`You have ${number} euros!`))
+// 2.2.
+const newNumbers = []
+// 2.3.
+numbers.forEach((number) => newNumbers.push(number * 2))
+// 2.4.
+const allTheNumbers = numbers.concat(newNumbers)
 
-data['k_symbol'] = list(map(cleankSymbol, data['k_symbol']))
-data = data[~data['k_symbol'].isin(['POJISTINE', 'SANKC. UROK', 'UVER'])]
-```
-
-```python
-def clean_type(x):
-    if 'PRI' in x:
-        return 'PRIJEM'
-    else:
-        return x
-
-data['type'] = list(map(clean_type, data['type']))
-```
-
-</details>
-
----
-
-#### :pencil2: Check for Understanding - Class activity/quick quiz
-
-> :clock10: 10 min (+ 10 min Review)
-
-<details>
-  <summary> Click for Instructions: Activity 2 </summary>
-
-- Link to [activity 2](https://github.com/ironhack-edu/data_3.08_activities/blob/master/3.08_activity_2.md).
-
-</details>
-
-<details>
-  <summary> Click for Solution: Activity 2 solutions </summary>
-
-- Link to [activity 2 solutions](https://gist.github.com/ironhack-edu/2946a99a19aa1f86c066e7dd1ffec7fc).
-
-</details>
-
----
-
-:coffee: **BREAK**
-
----
-
-### Lesson 3 key concepts
-
-> :clock10: 20 min
-
-Revisit Data Analysis work flow for modeling - 2
-
-- More EDA/data cleaning
-- Data pre processing
-
-<details>
-  <summary> Click for Code Sample: EDA / Data Cleaning </summary>
-
-```python
-import matplotlib.pyplot as plt
-import seaborn as sns
-%matplotlib inline
-```
-
-```python
-corr_matrix=data.corr(method='pearson')  # default
-fig, ax = plt.subplots(figsize=(10, 8))
-ax = sns.heatmap(corr_matrix, annot=True)
-plt.show()
-```
-
-```python
-sns.distplot(data['t_amount'])
-plt.show()
-
-sns.distplot(data['l_amount'])
-plt.show()
-
-sns.distplot(data['balance'])
-plt.show()
-
-sns.distplot(data['payments'])
-plt.show()
-```
-
-</details>
-
-<details>
-  <summary> Click for Code Sample: Data preprocessing </summary>
-
-```python
-import numpy as np
-from sklearn.preprocessing import Normalizer
-# from sklearn.preprocessing import StandardScaler
-
-X = data.select_dtypes(include = np.number)
-
-# Normalizing data
-transformer = Normalizer().fit(X)
-x_normalized = transformer.transform(X)
-x = pd.DataFrame(x_normalized)
-```
-
-```python
-cat = data.select_dtypes(include = np.object)
-cat = cat.drop(['status'], axis=1)
-categorical = pd.get_dummies(cat, columns=['type', 'operation', 'k_symbol', 'duration'])
-```
-
-</details>
-
----
-
-### :pencil2: Check for Understanding - Class activity/quick quiz
-
-> :clock10: 30 min
-
-<details>
-  <summary> Click for Instructions: Activity 3 </summary>
-
-- Link to [activity 3](https://github.com/ironhack-edu/data_3.08_activities/blob/master/3.08_activity_3.md).
-
-</details>
-
-<details>
-  <summary>Click for Solution: Activity 3 solutions</summary>
-
-- Link to [activity 3 solution](https://gist.github.com/ironhack-edu/9ca2052231cc1802096e2f0c4eb7e9a9).
-
-</details>
-
----
-
-### Lesson 4 key concepts
-
-> :clock10: 20 min
-
-Revisit Data Analysis work flow for modeling - 2
-
-- Fitting the model
-- Making predictions on the test data
-- Check model accuracy
-
-:exclamation: Note to instructor: When we work with multi class classification problem and use Logistic Regression method from `sklearn`, the argument "multi_class" can take different arguments. Discuss the one versus rest method and multinomial mehtod briefly, how they are different.
-
-<details>
-  <summary> Click for Code Sample: Train test split </summary>
-
-```python
-y = data['status']
-X = np.concatenate((x, categorical), axis=1)
-```
-
-```python
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.4, random_state=100)
-```
-
-</details>
-
-<details>
-  <summary> Click for Code Sample: Fitting the model </summary>
-
-- Refer to the documentation
-  [https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html]
-
-```python
-from sklearn.linear_model import LogisticRegression
-classification = LogisticRegression(random_state=0, solver='lbfgs',
-                  multi_class='multinomial').fit(X_train, y_train)
-```
-
-```python
-predictions = classification.predict(X_test)
-classification.score(X_test, y_test)
-```
-
-```python
-print(y_test.value_counts())
-# As you would notice here, there is a huge imbalance in the data among the different classes. We will talk more about imbalance and how to resolve it later
-
-pd.Series(predictions).value_counts()
-# This shows that the disparity in the numbers are amplified by the model
-```
-
-```python
-from sklearn.metrics import confusion_matrix
-confusion_matrix(y_test, predictions)
+// 3.1.
+letters.reverse()
+// 3.2.
+letters.includes('c')
 ```
 
 </details>
@@ -387,25 +224,5 @@ confusion_matrix(y_test, predictions)
 ---
 
 :coffee: **BREAK**
-
----
-
-### :pencil2: Practice on key concepts - Lab
-
-> :clock10: 30 min
-
-<details>
-  <summary> Click for Instructions: Lab </summary>
-
-- Link to the lab: [https://github.com/ironhack-labs/lab-predictions-logistic-regression](https://github.com/ironhack-labs/lab-predictions-logistic-regression)
-
-</details>
-
-<details>
-  <summary> Click for Solution: Lab solutions </summary>
-
-- Link to the [lab solution](https://gist.github.com/ironhack-edu/c3e7fba417de11bcf152ba6329acbbb4).
-
-</details>
 
 ---
