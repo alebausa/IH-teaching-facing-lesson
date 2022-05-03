@@ -53,7 +53,7 @@ console.log(fruits.length)
 
 > :clock10: 20 min
 
-⚠️ Before using any method one should ask themselves first:
+⚠️ Before using any method, one should ask themselves first:
 
 1. Does the method modify the original array?
 2. What is its return value?
@@ -125,7 +125,7 @@ favFoods.splice(index, 1)
 Iterate through an array with <code>for</code> and <code>forEach</code>
 
 - for loop (already performed)
-- forEach: it takes a callback function and the return value is undefined
+- forEach: it takes a callback function and its return value is undefined
 
 <details>
   <summary> Code example: for loop </summary>
@@ -302,7 +302,7 @@ for (let key in student) {
 
 > :clock10: 20 min
 
-- There are nested objects and we can chain notation to access data
+- Objects can contain nested objects, and we can chain different notations to access data
 - There are multidimensional arrays: how to access array sublevels
 - If we combine the two, we have data structures, and therefore, we have to combine notations to access the data
 
