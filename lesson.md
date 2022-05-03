@@ -18,6 +18,8 @@ After this lesson, students will be able to:
 - Understand how to access the data in nested object and arrays
 - Understand the difference between what a method does and what a method returns
 - Read official documentation before starting to code
+- Create a data structure combining arrays and objects
+- Iterate trough arrays
 
 ---
 
@@ -229,7 +231,7 @@ letters.includes('c')
 
 ### Lesson 3: Object manipulation key concepts
 
-> :clock10: 15 min
+> :clock10: 20 min
 
 - Objects are commonly used when there are several properties that belong to the same concept or unit of data
 - There are different ways of declaring objects
@@ -298,7 +300,7 @@ for (let key in student) {
 
 ### Lesson 4: Arrays & Objects combined key concepts
 
-> :clock10: 15 min
+> :clock10: 20 min
 
 - There are nested objects and we can chain notation to access data
 - There are multidimensional arrays: how to access array sublevels
@@ -406,3 +408,12 @@ function getRandomRestaurant() {
 ```
 
 </details>
+
+---
+
+### ✅ End of the day: recap
+
+> :clock10: 10 min
+
+- What have we learned today?
+- What are the students supposed to do in the lab?
