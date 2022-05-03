@@ -23,7 +23,7 @@ After this lesson, students will be able to:
 
 ---
 
-### Lesson 0: Review of what we already know
+### Lesson 0: What have we learned so far?
 
 > :clock10: 5 min
 
@@ -49,7 +49,7 @@ console.log(fruits.length)
 
 ---
 
-### Lesson 1: Data manipulation in arrays key concepts
+### Lesson 1: Data manipulation in arrays - key concepts
 
 > :clock10: 20 min
 
@@ -187,7 +187,7 @@ console.log(students)
 <details>
   <summary> Click for instructions </summary>
 
-- Fork the following replit [Array practise](https://replit.com/@AlejandraBausa/ArrayPractice#script.js).
+- Fork the following replit into your account: [Array practise](https://replit.com/@AlejandraBausa/ArrayPractice#script.js).
 
 </details>
 
@@ -234,11 +234,11 @@ letters.includes('c')
 > :clock10: 20 min
 
 - Objects are commonly used when there are several properties that belong to the same concept or unit of data
-- There are different ways of declaring objects
+- There are different ways to declare objects
 - We can access their properties via bracket notation or dot notation
-- There are different ways of knowing what keys does an object have
-- There ways to reassign keys and values in an object an manipulate it
-- Iterate with the <code>for in</code> method
+- There are different methods to check whether an object has a specific key declared
+- There are ways to reassign keys and values in an object and create new keys
+- Iterate through the object keys with the <code>for in</code> method
 
 <details>
   <summary> Click for code examples</summary>
@@ -304,7 +304,7 @@ for (let key in student) {
 
 - Objects can contain nested objects, and we can chain different notations to access data
 - There are multidimensional arrays: how to access array sublevels
-- If we combine the two, we have data structures, and therefore, we have to combine notations to access the data
+- If we combine arrays and objects, we have data structures, and therefore,we can combine notations to access the data
 
 <details>
   <summary> Click for code examples</summary>
@@ -372,7 +372,7 @@ console.log(classRoom)
 <details>
   <summary> Click for instructions </summary>
 
-- Fork the following replit [Object and array practise](https://replit.com/@AlejandraBausa/ObjectPractice#script.js).
+- Fork the following replit into your account: [Object and array practise](https://replit.com/@AlejandraBausa/ObjectPractice#script.js).
 </details>
 <details>
   <summary> Click for solutions (code along together) </summary>
